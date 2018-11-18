@@ -1,0 +1,93 @@
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-sm-6">
+  <h1>Shipping Address</h1>
+<form role="form">
+    <div class="box-body">
+      
+      <div class="form-group">
+        <label for="exampleInputEmail1">Receiver Name</label>
+        <input type="name" class="form-control" id="exampleInputEmail1" placeholder="Enter Receiver Name">
+      </div>
+      
+      <div class="form-group">
+          <label for="exampleInputPassword1">State</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="State Name">
+        </div>
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">City</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Shipping City">
+      </div>
+
+      <div class="form-group">
+          <label for="exampleInputPassword1">Street Address</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Street Address">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">Zipcode</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Zipcode">
+          </div>
+      
+    </div>
+    <!-- /.box-body -->
+
+    
+  </form>
+</div>
+
+  
+<div class="col-sm-6">
+      <h1>Payment Information</h1>
+    <form role="form">
+        <div class="box-body">
+          
+          <div class="form-group">
+            <label for="exampleInputEmail1">Select Card Type:</label>
+            <input type="name" class="form-control" id="exampleInputEmail1" placeholder="Enter Receiver Name">
+          </div>
+          
+          <div class="form-group">
+            <label for="exampleInputPassword1">Card Holder Name:</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Name">
+          </div>
+    
+          <div class="form-group">
+              <label for="exampleInputPassword1">Card Number:</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Valid Card Number:">
+            </div>
+    
+            <div class="form-group">
+                <label for="exampleInputPassword1">Expiration Date</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Zipcode">
+              </div>
+
+              <div class="form-group">
+                  <label for="exampleInputPassword1">CV Code</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="CVC">
+                </div>
+          
+        </div>
+        <!-- /.box-body -->
+    
+        
+      </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12" style="text-align:center">
+          <div >
+              <button type="submit" style="padding: 10px 77px;" 
+              onclick="alert('The confirmation was sent to your mail');"
+              class="btn btn-primary"
+              (click)="sendMail()"
+              >Submit & Buy</button>
+            </div>
+      </div>
+    </div>
+    </div>
+      
+  <!--  window.location.href = '/products'; -->

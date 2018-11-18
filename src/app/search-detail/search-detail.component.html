@@ -1,0 +1,74 @@
+<div class="container">
+<div class="row" *ngIf='query'>
+    <div class="col-md-4"></div>
+    <div class="col-md-6">
+    <h2>
+        <span style="font-weight:bold;"><h1> Results found for</h1></span> <span style="font-weight:bold;">{{ query }}</span>
+    </h2>
+  </div> 
+  </div>
+<div class ='text-center' *ngIf='query'>
+    <product-search class='search-inline' ></product-search>
+  </div>
+<div class="row">
+  <div class="col-md-12" style="height:35px"> 
+</div> 
+
+<div class="row" style="margin: 30px;">
+                  
+    <div class="col-md-4" style="text-align:center">
+                <div>
+                    <a class="btn allId" href="/products" style="background-color: #ddd;padding: 10px 35px; 
+                                font-size: 23px;
+                                color: white;
+                                font-weight: 500">All</a>
+                </div>
+            </div>
+
+    <div class="col-md-4" style="text-align:center">
+        <div class="dropdown">
+            <button class="dropbtn">Price</button>
+            <div class="dropdown-content">
+              <a href="/filteredPriceAsc">cheap to expensive</a>
+              <a href="/filteredPriceDesc">expensive to cheap</a>
+            </div>
+          </div>
+    </div>
+
+    <div class="col-md-4" style="text-align:center">
+            <div class="dropdown">
+                <button class="dropbtn">Category</button>
+                <div class="dropdown-content">
+                    <a href="/phones" style="width: 201px;">Phone</a>
+                    <a href="/tvs" style="width: 201px;">TV</a>
+                    <a href="/computers" style="width: 201px;">Computer</a>
+                </div>
+              </div>
+        </div>
+</div>
+
+  <!-- <h3 *ngFor='let item of productList'>
+      <a href='products/{{item.name}}' >{{item.name}}</a>
+  </h3>  -->
+  <div class="row">  
+      <div class="col-sm-4 col-sm-12" *ngFor='let item of productList; let i = index' [ngClass]="{'row': (1+i)%3 == 0}">
+          <a href='products/{{item.name}}'  role="button" >
+            <div class="thumbnail hvr-grow" style="width:350px; border: 1px solid #c0bfbf">
+            <img [src]='item.image' style="height:210px"  
+            onerror="this.src='assets/images/soon.png';">
+            
+            <div class="caption">
+                <hr style="    border-top: 1px solid #c0bfbf"/>
+                <h2 style="font-weight:100px">{{item.name}} </h2>
+                <h3 style="font-weight:100px">${{ item.price }} </h3>
+            </div>
+          </div>
+        </a> 
+        </div>   
+      </div>
+      
+    <div class ='text-center' *ngIf='!query'>
+      <span style="font-weight:bold;"><h1>Search in Handy Store</h1></span>
+      <product-search class='search-inline' *ngIf='!query'></product-search>
+    </div>
+</div>

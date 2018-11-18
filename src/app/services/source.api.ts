@@ -1,0 +1,1 @@
+export const SOURCE_API: string = 'https://justhopeitworks.herokuapp.com';

@@ -1,0 +1,73 @@
+<nav class="navbar navbar" style="border-bottom: 1px solid #c6bebe;">
+    <div class="container"> 
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Handy Store</a>
+      </div>
+  
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          
+          <li><a href="/products">Products</a></li>
+          <li><a href="/news">News</a></li>
+          
+        </ul>
+        <!-- <product-search></product-search> -->
+        <!--  -->
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/login" *ngIf='!userPresent'>Sign in</a></li>
+          <li><a href="/signup" *ngIf='!userPresent'>Sign up</a></li>
+          <li><a href="/myaccount"*ngIf='userPresent'>My account</a></li>
+          <li><a href="/login"   class="btn" onclick="localStorage.clear(); window.location.href = '/login';"   *ngIf='userPresent'>Sign out</a></li>
+          
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <div class='container-fluid' style='min-height: 570px; margin-bottom: 20px; padding-left: 0px !important; 
+  margin-bottom: auto;
+  width: 101%;'>
+    <router-outlet></router-outlet>
+  </div> 
+
+  <footer class='container-fluid text-center' style="background-color:#0d0d0d; 
+    padding-top: 20px;
+    padding-bottom: 20px;">
+    <div class="container">
+    <div class="row">
+
+        
+
+      <div class="col-md-4">
+          <h3 style="color:white">Site Map</h3>
+          <h5 style="color:white"><a href="/home" style="color:white">Home Page</a></h5>
+          <h5 style="color:white"><a href="/products" style="color:white">Products</a></h5>
+          <h5 style="color:white"><a href="/news" style="color:white">News</a></h5>
+      </div>
+
+      <div class="col-md-4">
+          <h3 style="color:white">Site Map</h3>
+          <h5 style="color:white"><a href="/home" style="color:white">Home Page</a></h5>
+          <h5 style="color:white"><a href="/products" style="color:white">Products</a></h5>
+          <h5 style="color:white"><a href="/news" style="color:white">News</a></h5>
+        </div>
+
+        <div class="col-md-4">
+            <h3 style="color:white">Author Of The Page</h3>
+          <h5 style="color:white"><a href="/#" style="color:white">Paul Nosenko</a></h5>
+          <h5 style="color:white"><a href="/#" style="color:white">Diploma project</a></h5>
+          </div>
+          
+    </div>  
+  </div>
+
+    <hr style="color:white" />
+     <h5 style="color:white"> &copy; Handy Store </h5>
+  </footer>

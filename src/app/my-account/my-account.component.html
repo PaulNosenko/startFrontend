@@ -1,0 +1,69 @@
+<div class="container">
+<div class="row">
+    <div class="col-md-12">
+       <h3>Welcome to your account <strong>{{ user.name }}</strong> </h3>
+       <hr style="border-bottom: 1px solid #ddd"/>
+  </div>
+</div>
+
+
+<div *ngIf='itemsPresent'>
+<div class="row shama"  style="margin-bottom:12px; padding-top: 15px;" *ngFor='let item of productsList;' >
+    <div class="col-xs-6 col-md-3">
+      <div  class="thumbnail">
+          <img [src]='item.image' style="height:110px"  
+          onerror="this.src='assets/images/soon.png';">
+      </div>
+    </div>
+    
+    <div class="col-xs-6 col-md-6" style="height: 120px; width: 583px; border: 1px solid #ddd; border-radius: 5px; background-color: #ddd" >
+      <h1 style="text-align: center;"> {{ item.name }} </h1>
+      <h3 style="text-align: center; "> ${{ item.price }} </h3>   
+    </div>
+
+    <div class="col-xs-6 col-md-3">
+        <div class="thumbnail" style="height: 120px; text-align : center; background : #ddd;">
+            <button class="btn btn-primary" style="margin: 9px 0px; padding: 10px 55px;"
+            (click)="deleteFromCart2(item.id); "
+
+            onclick="location.href='/checkout';"
+            >Buy</button><br />
+            
+            <button class="btn btn-danger" style="padding: 10px 47px;"
+            
+            (click)="deleteFromCart(item.id)"
+            
+            >Delete</button>
+        </div>
+      </div>
+      
+  </div>
+  <div class="row" >
+    <div class="col-md-6" style="text-align: center;">
+        <h1>Total cost is <b>$ {{ totalCost }}</b></h1>
+    </div>
+    <div class="col-md-6" style="text-align: center;">
+        <button class="btn btn-primary" style="margin: 15px 0px; padding: 10px 155px;"
+        (click)="buyAll()"
+        >Buy All</button>
+    </div>
+  </div>
+</div>
+
+
+
+<div>
+        <div class="row" *ngIf='!itemsPresent'>
+            <div class="col-md-12" style="text-align: center;">
+              <h1 style="margin: 15px 0px; padding: 10px 155px;">Your Cart Is Empty</h1>
+            </div>
+        </div>
+  <div class="row" *ngIf='!itemsPresent'>
+    <div class="col-md-12" style="text-align: center;">
+        <button class="btn btn-primary" style="margin: 15px 0px; padding: 10px 155px;"
+        onclick="location.href='/products';"
+        >Continue Shopping</button>
+    </div>
+  </div>
+</div>
+</div>
